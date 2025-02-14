@@ -1,0 +1,14 @@
+This error typically occurs when you try to run an Expo project that uses a newer version of React Native than your Expo CLI supports.  The Expo CLI might not be compatible with all the latest features or dependencies of your project's React Native version.
+
+**Example Scenario:**
+
+Your project's `package.json` might specify React Native 0.71, but your Expo CLI is only compatible up to 0.70.
+
+**Code Example (package.json):**
+```json
+{
+  "dependencies": {
+    "react-native": "~0.71.0"
+  }
+}
+```
