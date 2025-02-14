@@ -1,0 +1,35 @@
+To resolve this issue, you must ensure compatibility between your Expo CLI version and the React Native version used in your project.  Here's a breakdown of the solution:
+
+1. **Update Expo CLI:**
+   The most common solution is to update your Expo CLI to the latest version.  Run this command in your terminal:
+
+   ```bash
+   npm install -g expo-cli
+   ```
+   or
+   ```bash
+   yarn global add expo-cli
+   ```
+
+2. **Check Compatibility (If updating CLI doesn't work):**
+   If updating doesn't resolve the issue, consult the official Expo documentation for compatibility information between Expo CLI and React Native versions. You may need to adjust your `package.json` to use an older, compatible React Native version.
+
+3. **Downgrade React Native (If necessary):**
+   If no compatible Expo CLI version is available for your current React Native version, downgrade React Native in your `package.json` to a version that is compatible with your Expo CLI. Remember to run `expo prebuild` and `expo install` after making changes to your `package.json`.
+
+**Example `package.json` change (downgrading):**
+
+```json
+{
+  "dependencies": {
+    "react-native": "~0.70.0" // Downgraded version
+  }
+}
+```
+
+After making changes to `package.json`, run:
+```bash
+expo prebuild
+expo install
+```
+Then try building your project again using `expo start`.
